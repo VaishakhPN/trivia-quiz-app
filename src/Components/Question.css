@@ -19,7 +19,7 @@
     padding: 10px 20px;
     margin: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
@@ -35,9 +35,10 @@
   button {
     font-size: 18px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #33c4ec;
     color: #fff;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s;

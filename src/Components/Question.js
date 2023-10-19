@@ -13,7 +13,7 @@ const Question = ({score, endQuiz, setScore, totalQuestions }) => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('https://opentdb.com/api.php?amount=5&category=32&type=multiple');
+        const response = await axios.get('https://opentdb.com/api.php?amount=10&category=29&type=multiple');
         setQuestions(response.data.results);
       } catch (error) {
         console.error('Error fetching questions:', error);
@@ -54,7 +54,7 @@ const Question = ({score, endQuiz, setScore, totalQuestions }) => {
     }
   };
  
-if(currentQuestionIndex < 9) {
+if(currentQuestionIndex < 10) {
   return (
     <div className="question">
       <h2>{questions[currentQuestionIndex]?.question}</h2>
@@ -89,37 +89,3 @@ else return <Results score={score}></Results>
 };
  
 export default Question;
-
-
-
-// if (count <= 9) {
-//   return (
-//     <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-//       {currentQuestion && (
-//         <>
-//           <Question currentQuestion={currentQuestion.question}></Question>
-//           <Options
-//             options={currentQuestion.options}
-//             correctanswer={currentQuestion.correctAnswer}
-//             handleOptions={handleOptions}
-//             mappedQuiz={mappedQuiz}
-//             setCurrentQuestion={setCurrentQuestion}
-//             setCount={setCount}
-//             correctAnswerCount={correctAnswerCount}
-//             setCorrectAnswerCount={setCorrectAnswerCount}
-//           ></Options>
-//         </>
-//       )}
-//     </div>
-//   );
-// } else {
-//   return (
-//     <div>
-//       <h1>Complete</h1>
-//       <h2>yyour score is {correctAnswerCount}/10</h2>
-//       <div>
-//         <button onClick={refreshPage}>Play Again?</button>
-//       </div>
-//     </div>
-//   );
-// }
