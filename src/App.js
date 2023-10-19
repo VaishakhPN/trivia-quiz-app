@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import HomePage from './Components/HomePage';
+import Question from './Components/Question';
+import Results from './Components/Results';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [gameState, setGameState] = useState('home');
+  const [score, setScore] = useState(0);
+
+  const startQuiz = () => {
+    setGameState('question');
+    setScore(0);
+  };
+
+  const endQuiz = () => {
+    setGameState('results');
+  };
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {gameState === 'home' && <HomePage onStartQuiz={startQuiz} />}
+      {gameState === 'question' && <Question score={score} endQuiz={endQuiz} setScore={setScore} />}
+      {gameState === 'results' && <Results score={score} />}
     </div>
   );
-}
+};
 
 export default App;

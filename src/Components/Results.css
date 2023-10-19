@@ -1,0 +1,24 @@
+.results {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .results h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .results p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .results button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
