@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className="app">
       {gameState === 'home' && <HomePage onStartQuiz={startQuiz} />}
-      {gameState === 'question' && <Question score={score} endQuiz={endQuiz} setScore={setScore} />}
+      {gameState === 'question' && <Question score={score} endQuiz={endQuiz} totalQuestions={10} setScore={setScore} />}
       {gameState === 'results' && <Results score={score} />}
     </div>
   );
