@@ -8,11 +8,11 @@
     margin-bottom: 20px;
   }
   
-  .options {
+  /* .options {
     display: flex;
     flex-direction: row;
     align-items: center;
-  }
+  } */
   
   .option {
     font-size: 18px;
@@ -35,7 +35,7 @@
   button {
     font-size: 18px;
     padding: 10px 20px;
-    background-color: #33c4ec;
+    background-color: #0d0e0e;
     color: #fff;
     border: none;
     border-radius: 10px;

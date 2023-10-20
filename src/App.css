@@ -4,3 +4,6 @@
   align-items: center;
   margin-top: 50px;
 }
+body{
+  background: linear-gradient(to bottom, #33fff5, #1a596e);
+}
