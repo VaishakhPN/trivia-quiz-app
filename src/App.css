@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -5,5 +10,6 @@
   margin-top: 50px;
 }
 body{
-  background: linear-gradient(to bottom, #33fff5, #1a596e);
+  background:
+  linear-gradient(to bottom, #7deee8, #f7f9f5);
 }

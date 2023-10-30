@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import HomePage from './Components/HomePage';
-import Question from './Components/Question';
-import Results from './Components/Results';
+import HomePage from './pages/HomePage/index';
+import Question from './pages/Questions/index';
+import Results from './pages/Results/index';
 import './App.css';
 
 const App = () => {

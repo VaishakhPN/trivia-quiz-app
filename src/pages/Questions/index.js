@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Question.css';
-import Results from './Results';
+import Results from '../Results';
 
-// Function to shuffle an array
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1)); 
+    const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
@@ -18,6 +17,7 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
   const [showNextButton, setShowNextButton] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isLastQuestion, setIsLastQuestion] = useState(false);
+  const [questionNumber, setQuestionNumber] = useState(1);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -63,6 +63,7 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
         setShowNextButton(false);
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
         setSelectedOption(null);
+        setQuestionNumber((prevNumber) => prevNumber + 1);
       }, 1000);
     }
   };
@@ -70,7 +71,9 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
   if (currentQuestionIndex < totalQuestions) {
     return (
       <div className="question">
-        <h2>{questions[currentQuestionIndex]?.question}</h2>
+        <h1>Comics Quiz</h1>
+        <h2>Question {questionNumber}</h2>
+        <h3>{questions[currentQuestionIndex]?.question}</h3>
         <div className="options">
           {questions[currentQuestionIndex]?.options.map((option, index) => (
             <div
@@ -93,4 +96,3 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
 };
 
 export default Question;
-
